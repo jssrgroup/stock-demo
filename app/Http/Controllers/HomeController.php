@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\EquipmentModel;
+use App\Models\SchedulemainModel;
+use App\Models\MainMenuModel;
 
 class HomeController extends Controller
 {
@@ -13,7 +16,30 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('index');
+        //$equipment=EquipmentModel::take(10)->get();
+        /*$sch=SchedulemainModel::with(['Equipments'=>function($q){
+            $q->where('MAKER','KOMATSU');
+        }])->first();
+        foreach($sch->Equipments as $eq){
+            echo $eq->ITEMNO;
+            break;
+        }*/
+        //dd($sch);
+        
+        $main_menu=MainMenuModel::where('status','1')->where('menu','1')->orderBy('sort_id','asc')->get();
+        $sub_menu=MainMenuModel::where('status','1')->where('main_menu','108')->orWhere('main_menu','13')
+        ->orWhere('main_menu','157')
+        ->orWhere('main_menu','127')
+        ->orWhere('main_menu','92')
+        ->orWhere('main_menu','136')
+        ->orWhere('main_menu','143')
+        ->orderBy('sort_id','asc')->get();
+
+        //dd($sub_menu);
+        $return['main_menu']=$main_menu;
+        $return['sub_menu1']=$sub_menu;
+
+        return view('index',$return);
     }
 
     /**
