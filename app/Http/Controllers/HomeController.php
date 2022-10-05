@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Equipment;
+use DB;
 
+use App\Models\Equipment;
 use App\Models\MenuCatagoryModel;
 
 class HomeController extends Controller
@@ -19,7 +20,10 @@ class HomeController extends Controller
 
         // $menu_cat = MenuCatagoryModel::take(1)->get();
         // $menu_cat = MenuCatagoryModel::orderBy('INDX', 'desc')->take(4)->get();
-        $menu_cat = MenuCatagoryModel::where('AUC','F211')->orderBy('CATEGORY','asc')->groupBy('CATEGORY')->get();
+        $menu_cat = Equipment::where('AUC','F211')->orderBy('CATEGORY','asc')->groupBy('CATEGORY')->select(
+            'equipment.*'
+            ,DB::raw('count(*) AS QTY')
+        )->get();
         
         // dd($menu_cat);
         $data['menu_cat'] = $menu_cat;
