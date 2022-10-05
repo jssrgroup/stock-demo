@@ -153,7 +153,7 @@
             <div class="block-products-carousel__slider">
                 <div class="block-products-carousel__preloader"></div>
                 <div class="owl-carousel">
-                    @foreach ($equipment as $equipment)
+                    @foreach ($Featured_Product as $Featured_Product)
                     <div class="block-products-carousel__column">
                         <div class="block-products-carousel__cell">
                             <div class="product-card product-card--hidden-actions ">
@@ -168,12 +168,12 @@
                                 </div>
                                 <div class="product-card__image product-image">
                                     <a href="product.html" class="product-image__body">
-                                        <img class="product-image__img"  src="https://files.jssr.co.th/public/equipment/{{$equipment->SITE}}/{{strtolower($equipment->ITEMNO)}}-p1.jpg" alt="">
+                                        <img class="product-image__img"  src="https://files.jssr.co.th/public/equipment/{{$Featured_Product->SITE}}/{{strtolower($Featured_Product->ITEMNO)}}-p1.jpg" alt="">
                                     </a>
                                 </div>
                                 <div class="product-card__info">
                                     <div class="product-card__name">
-                                        <a href="product.html">{{$equipment->DESC_TH}}</a>
+                                        <a href="product.html">{{$Featured_Product->DESC_TH}}</a>
                                     </div>
                                     <div class="product-card__rating">
                                         <div class="product-card__rating-stars">
@@ -277,7 +277,7 @@
                                         Availability: <span class="text-success">In Stock</span>
                                     </div>
                                     <div class="product-card__prices">
-                                        {{$equipment->MARKET_PRICE}}
+                                        {{$Featured_Product->MARKET_PRICE}}
                                     </div>
                                     <div class="product-card__buttons">
                                         <button class="btn btn-primary product-card__addtocart" type="button">Add To Cart</button>
