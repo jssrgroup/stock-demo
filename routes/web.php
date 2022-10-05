@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ListProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,3 +16,4 @@ use App\Http\Controllers\ProductController;
 */
 Route::resource('/', HomeController::class);
 Route::resource('/product', ProductController::class);
+Route::resource('/listProduct', ListProductController::class);
