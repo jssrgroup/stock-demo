@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,3 +14,4 @@ use App\Http\Controllers\HomeController;
 |
 */
 Route::resource('/', HomeController::class);
+Route::resource('/product', ProductController::class);
