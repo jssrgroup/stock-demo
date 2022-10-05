@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Equipment;
 
 class HomeController extends Controller
 {
@@ -13,7 +14,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $equipment = Equipment::orderBy('INDX', 'desc')->take(4)->get();
+        $data['equipment'] = $equipment;
+        return view('index',$data);
     }
 
     /**
