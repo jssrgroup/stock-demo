@@ -53,7 +53,7 @@
     <!-- .block-features -->
     <div class="block block-features block-features--layout--classic">
         <div class="container">
-            <div class="block-features__list">
+            {{-- <div class="block-features__list">
                 <div class="block-features__item">
                     <div class="block-features__icon">
                         <svg width="48px" height="48px">
@@ -100,6 +100,26 @@
                         <div class="block-features__title">Hot Offers</div>
                         <div class="block-features__subtitle">Discounts up to 90%</div>
                     </div>
+                </div>
+            </div> --}}
+            <div class="row" style="margin-top:25px; margin-bottom:10px;"><div class="col-md-3 col-sm-6 md-margin-bottom-30">
+                <a href="https://members.jssr.co.th/" target="_blank"><img class="img-responsive" src="https://jssr.co.th/img/member_.png"></a>
+                </div><div class="col-md-3 col-sm-6 md-margin-bottom-30">
+                <a href="https://jnego.jssr.co.th/" target="_blank"><img class="img-responsive" src="https://jssr.co.th/img/jnego2.png"></a>
+                </div><div class="col-md-3 col-sm-6 md-margin-bottom-30">
+                <a href="https://www.jbuynow.com/" target="_blank"><img class="img-responsive" src="https://jssr.co.th/img/shop_online_.png"></a>
+                </div><div class="col-md-3 col-sm-6 md-margin-bottom-30">
+                <a href="http://stock.jssr.co.th/machines_listing.php" target="_blank"><img class="img-responsive" src="https://jssr.co.th/img/stock_.png"></a>
+                </div>
+            </div>
+            <div class="row" style="margin-top:25px; margin-bottom:10px;"><div class="col-md-3 col-sm-6 md-margin-bottom-30">
+                <a href="https://bit.ly/jssr-r1" target="_blank"><img class="img-responsive" src="https://jssr.co.th/img/online_.png"></a>
+                </div><div class="col-md-3 col-sm-6 md-margin-bottom-30">
+                <a href="https://register.jssr.co.th/" target="_blank"><img class="img-responsive" src="https://jssr.co.th/img/register_.png"></a>
+                </div><div class="col-md-3 col-sm-6 md-margin-bottom-30">
+                <a href="http://www.greencorporation.jp/" target="_blank"><img class="img-responsive" src="https://jssr.co.th/img/stock-japan_.png"></a>
+                </div><div class="col-md-3 col-sm-6 md-margin-bottom-30">
+                <a href="sell_channel.php" target="_blank"><img class="img-responsive" src="https://jssr.co.th/img/send2.gif"></a>
                 </div>
             </div>
         </div>
