@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\MenuCatagoryModel;
+
 class HomeController extends Controller
 {
     /**
@@ -13,7 +15,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('index');
+
+        // $menu_cat = MenuCatagoryModel::take(1)->get();
+        // $menu_cat = MenuCatagoryModel::orderBy('INDX', 'desc')->take(4)->get();
+        $menu_cat = MenuCatagoryModel::where('AUC','F211')->orderBy('CATEGORY','asc')->groupBy('CATEGORY')->get();
+        
+        // dd($menu_cat);
+        $data['equipment'] = $menu_cat;
+        return view('index',$data);
+        // return view('index');
+
+
     }
 
     /**

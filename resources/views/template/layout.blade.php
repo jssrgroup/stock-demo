@@ -771,6 +771,14 @@
                                                             Welding & Soldering
                                                         </a>
                                                     </li>
+                                                    @foreach ($equipment as $eq)
+                                                    <li class="departments__item">
+                                                        <a class="departments__item-link" href="">
+                                                        <b>{{ $eq->CATEGORY }}</b>
+                                                        </a>
+                                                    </li>
+                                                    @endforeach
+                                                    
                                                 </ul>
                                             </div>
                                         </div>
