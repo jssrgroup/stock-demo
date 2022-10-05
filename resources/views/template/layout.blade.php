@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
     <title>Stroyka</title>
-    <base href="{{env('APP_URL')}}" target="_blank">
+    <base href="{{env('APP_URL')}}" >
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <!-- fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i">
@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
     <!-- font - stroyka -->
     <link rel="stylesheet" href="assets/fonts/stroyka/stroyka.css">
+    @yield('css')
 </head>
 
 <body>
@@ -581,7 +582,7 @@
                                                         </a>
                                                     </li>
                                                     @endforeach
-                                                    
+
                                                 </ul>
                                             </div>
                                         </div>
@@ -643,9 +644,9 @@
                                                     {{$main->NAME_T}}
                                                 </div>
                                             </a>
-                                        </li> 
+                                        </li>
                                         @endif
-                                            
+
                                         @endforeach
 
                                     </ul>
@@ -1507,6 +1508,7 @@
     <script>
         svg4everybody();
     </script>
+    @yield('js')
 </body>
 
 </html>
