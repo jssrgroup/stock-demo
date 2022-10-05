@@ -26,7 +26,7 @@ class HomeController extends Controller
         // return view('index');
 
 
-        $equipment = Equipment::orderBy('INDX', 'desc')->take(4)->get();
+        $equipment = Equipment::where('AUC','F211')->orderBy('INDX', 'desc')->take(4)->get();
         $data['equipment'] = $equipment;
         return view('index',$data);
     }
