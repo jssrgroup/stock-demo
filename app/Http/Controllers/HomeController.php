@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\EquipmentModel;
 use App\Models\SchedulemainModel;
 use App\Models\MainMenuModel;
+use App\Models\Equipment;
+
+use App\Models\MenuCatagoryModel;
 
 class HomeController extends Controller
 {
@@ -36,10 +39,22 @@ class HomeController extends Controller
         ->orderBy('sort_id','asc')->get();
 
         //dd($sub_menu);
-        $return['main_menu']=$main_menu;
-        $return['sub_menu1']=$sub_menu;
+        $data['main_menu']=$main_menu;
+        $data['sub_menu1']=$sub_menu;
 
-        return view('index',$return);
+
+        // $menu_cat = MenuCatagoryModel::take(1)->get();
+        // $menu_cat = MenuCatagoryModel::orderBy('INDX', 'desc')->take(4)->get();
+        $menu_cat = MenuCatagoryModel::where('AUC','F211')->orderBy('CATEGORY','asc')->groupBy('CATEGORY')->get();
+        
+        // dd($menu_cat);
+        $data['menu_cat'] = $menu_cat;
+        // return view('index');
+
+
+        $equipment = Equipment::orderBy('INDX', 'desc')->take(4)->get();
+        $data['equipment'] = $equipment;
+        return view('index',$data);
     }
 
     /**
