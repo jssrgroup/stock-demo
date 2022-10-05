@@ -774,7 +774,7 @@
                                                     @foreach ($menu_cat as $eq)
                                                     <li class="departments__item">
                                                         <a class="departments__item-link" href="">
-                                                        {{ $eq->CATEGORY }}
+                                                        {{ $eq->CATEGORY }} ( {{ $eq->QTY }} ) 
                                                         </a>
                                                     </li>
                                                     @endforeach
